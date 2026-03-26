@@ -2,74 +2,121 @@
 <html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="img/muneco.jpg" type="image/x-icon">
-  <title>Encriptador JavaScript</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Encriptador JavaScript</title>
+
+    <link rel="icon" href="img/muneco.jpg" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <h1 class="titulo" data-text="Encriptar Texto JavaScript">Encriptar Texto JavaScript</h1>
-  <div class="headers-video">
-    <video src="img/Anima7529.mp4" autoplay muted loop></video>
-  </div>
-  <div class="headers-overly"></div>
-  <div class="headers-content">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Encryp<span>JS</span></a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="active">Inicio</a>
+                <a href="#">Manual</a>
+                <a href="#">Descargas</a>
+                <a href="#">Contacto</a>
+            </div>
+
+            <div class="menu-btn" id="menuBtn">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- VIDEO BACKGROUND -->
+    <div class="headers-video">
+        <video src="img/Anima7529.mp4" autoplay muted loop></video>
+    </div>
+
+    <div class="headers-overly"></div>
+
+    <!-- TITLE -->
+    <h1 class="titulo">Encriptador de Texto <span>JavaScript</span></h1>
+
+    <!-- MAIN -->
     <main class="main">
-      <section class="form box">
-        <form id="formulario">
-          <label for="input-texto">Solo letras minúsculas, sin tildes</label>
-          <textarea class="text-input" name="input-texto" id="input-texto" placeholder="Ingrese aqui el texto" rows="5"
-            cols="50"></textarea>
-          <div class="button-container">
-            <input class="btn" type="submit" value="¡ Codificar !" id="btn-encriptar">
-            <input class="btn" type="submit" value="¡ Decodificar !" id="btn-desencriptar">
-          </div>
-        </form>
-      </section>
 
-      <section class="msg box">
-        <label for="mensaje-texto">Mensaje Codificado:</h2>
-        </label>
-        <textarea class="text-input" name="mensaje-texto" id="mensaje-texto" rows="5" cols="50"></textarea>
-        <input class="btn" type="submit" value="Copiar texto" id="btn-copy">
-      </section>
+        <!-- FORMULARIO -->
+        <section class="form card">
+            <form id="formulario">
+                <label for="input-texto">Solo letras minúsculas, sin tildes</label>
 
-      <section>
-        <footer class="footer1">
-          <div class="footer-content">
+                <textarea class="text-input" id="input-texto" placeholder="Ingrese aquí el texto" rows="6"></textarea>
+
+                <div class="button-container">
+                    <button type="submit" class="btn" id="btn-encriptar">Codificar</button>
+                    <button type="submit" class="btn" id="btn-desencriptar">Decodificar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- RESULTADO -->
+        <section class="msg card">
+            <label for="mensaje-texto">Mensaje Codificado</label>
+
+            <textarea class="text-input" id="mensaje-texto" rows="6" readonly></textarea>
+
+            <button class="btn" id="btn-copy">Copiar texto</button>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
             <h3>Front End Developer</h3>
-            <p>Alura Challenges: Oracle ONE, Lógica de Programación</p>
+            <p>Alura Challenges: Oracle ONE - Lógica de Programación</p>
+
             <ul class="socials">
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
             </ul>
-          </div>
-          <div class="footer-bottom">
-            <p><b>copyright &copy;2022 <a href="#">Mauricio Sanchez Abella</a></b></p>
-            <div class="footer-menu">
-              <ul class="f-menu">
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 <a href="#">Mauricio Sanchez Abella</a></p>
+
+            <ul class="footer-menu">
                 <li><a href="">Home</a></li>
                 <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="">Contacto</a></li>
                 <li><a href="">Blog</a></li>
-              </ul>
-            </div>
-          </div>
-        </footer>
-      </section>
-    </main>
-</body>
-<script src="js/script.js"></script>
+            </ul>
+        </div>
+    </footer>
 
+    <!-- JS -->
+    <script src="js/script.js"></script>
+
+    <!-- MENU MOBILE -->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+        });
+    </script>
+
+</body>
 </html>
