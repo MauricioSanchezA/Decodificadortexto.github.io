@@ -1,254 +1,341 @@
-/* ==================================================
+/* ===========================
    RESET & BASE
-================================================== */
-html {
-    font-size: 62.5%;
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
+html {
+    font-size: 62.5%;
 }
 
 body {
-    font-family: "Urbanist", sans-serif;
-    background: linear-gradient(135deg, #0d1b2a, #1b263b);
-    min-height: 100vh;
-    overflow-x: hidden;
+    font-family: 'Urbanist', sans-serif;
+    background: linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
     color: #fff;
+    overflow-x: hidden;
 }
 
-/* ==================================================
+/* ===========================
    VIDEO BACKGROUND
-================================================== */
+=========================== */
 .headers-video {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -1;
-    overflow: hidden;
+    z-index: -2;
+    inset: 0;
 }
 
 .headers-video video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(0.35);
 }
 
-/* ==================================================
-   MAIN LAYOUT
-================================================== */
-.main {
-    max-width: 850px;
-    width: 90%;
-    margin: 10rem auto 5rem;
+.headers-overly {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    z-index: -1;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* ==================================================
-   TITULO MODERNO
-================================================== */
+.logo {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #2fdafc;
+}
+
+/* LINKS DESKTOP */
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: #d8d8d8;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #2fdafc;
+}
+
+/* MENU HAMBURGUESA */
+.menu-btn {
+    display: none;
+    font-size: 2.6rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ===========================
+   TITLE
+=========================== */
 .titulo {
+    margin-top: 120px;
     text-align: center;
     font-size: 4rem;
-    letter-spacing: 4px;
     text-transform: uppercase;
-    font-weight: 800;
-    background: linear-gradient(90deg, #2fdafc, #7dd3fc);
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 20px rgba(47, 218, 252, 0.3);
-    margin-top: 3rem;
-    animation: glow 3s infinite alternate;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 222, 255, 0.5);
 }
 
-@keyframes glow {
-    0% { text-shadow: 0 0 8px #2fdafc90; }
-    100% { text-shadow: 0 0 20px #2fdafc; }
+.titulo span {
+    color: #2fdafc;
 }
 
-/* ==================================================
-   CARD GLASS STYLE
-================================================== */
-.box {
+/* ===========================
+   MAIN + CARDS
+=========================== */
+.main {
+    max-width: 900px;
+    margin: 3rem auto 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.12);
     padding: 2rem;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(12px);
     border-radius: 1rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+    border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-/* ==================================================
-   LABELS
-================================================== */
+/* LABEL */
 label {
-    background: #1a5754;
+    display: block;
+    background-color: #1a5754;
     padding: 1rem;
-    border-radius: 8px;
-    text-transform: uppercase;
-    font-size: 1.4rem;
     text-align: center;
+    border-radius: 6px;
+    font-size: 1.5rem;
     color: #fff;
     font-weight: bold;
-    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-/* ==================================================
-   TEXTAREA INPUTS
-================================================== */
+/* TEXTAREA */
 .text-input {
-    margin-top: 1rem;
     width: 100%;
-    padding: 1rem;
-    border-radius: 0.7rem;
-    border: 1px solid #0003;
-    font-size: 1.5rem;
-    background: rgba(255,255,255,0.2);
-    color: #fff;
+    margin-top: 1rem;
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
     resize: none;
 }
 
-/* ==================================================
-   BOTONES
-================================================== */
+/* BUTTONS */
 .button-container {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .btn {
-    padding: 1.2rem 2.5rem;
-    border-radius: 0.7rem;
-    border: 2px solid #31e1d7;
-    background: transparent;
-    color: #31e1d7;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    cursor: pointer;
+    background-color: #38b2ac6d;
+    border: 2px solid #1e6662;
+    color: #1e6662;
+    padding: 1rem 2rem;
+    border-radius: 8px;
     font-size: 1.4rem;
-    transition: .3s;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
 }
 
 .btn:hover {
-    background: #31e1d7;
-    color: #0f2538;
-    box-shadow: 0 0 12px #31e1d7, 0 0 25px #31e1d7;
+    background-color: #4ff7ef;
+    border-color: #4ff7ef;
+    color: #000;
+    box-shadow: 0 0 15px #4ff7ef;
 }
 
-/* ==================================================
+/* ===========================
    FOOTER
-================================================== */
-.footer1 {
+=========================== */
+.footer {
     width: 100%;
+    padding: 3rem 0;
+    background: rgba(0, 0, 0, 0.55);
     text-align: center;
-    padding: 3rem 1rem;
-    background: rgba(0,0,0,0.65);
-    backdrop-filter: blur(8px);
-    margin-top: 4rem;
-    border-radius: 1rem;
+    backdrop-filter: blur(10px);
 }
 
 .footer-content h3 {
-    font-size: 2.5rem;
+    color: #2fdafc;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
-    color: #7dd3fc;
 }
 
 .footer-content p {
     font-size: 1.5rem;
-    color: #dbeafe;
+    color: #ddd;
+    margin-bottom: 1.5rem;
 }
 
 .socials {
-    list-style: none;
     display: flex;
+    gap: 1.4rem;
     justify-content: center;
-    gap: 2rem;
-    margin: 1.5rem 0 2.5rem;
 }
 
 .socials a {
     color: #fff;
-    font-size: 2rem;
-    border: 1px solid #7dd3fc;
+    border: 1px solid #fff;
+    padding: 0.6rem;
     border-radius: 50%;
-    padding: .8rem;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .socials a:hover {
-    color: #0ea5e9;
-    transform: scale(1.15);
-    border-color: #0ea5e9;
+    color: #2fdafc;
+    border-color: #2fdafc;
 }
 
+/* Footer bottom */
 .footer-bottom {
-    padding: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1.5rem;
 }
 
 .footer-bottom p {
     font-size: 1.4rem;
-    color: #94a3b8;
+    color: #aaa;
 }
 
-.footer-menu ul {
+.footer-bottom a {
+    color: #2fdafc;
+    text-decoration: none;
+}
+
+.footer-menu {
     margin-top: 1rem;
     display: flex;
-    gap: 1.5rem;
     justify-content: center;
+    gap: 1.5rem;
 }
 
-.footer-menu ul li a {
-    color: #cbd5e1;
+.footer-menu a {
     font-size: 1.4rem;
+    color: #ddd;
+    text-decoration: none;
 }
 
-.footer-menu ul li a:hover {
-    color: #7dd3fc;
-    text-shadow: 0 0 8px #7dd3fc;
+.footer-menu a:hover {
+    color: #2fdafc;
 }
 
-/* ==================================================
+/* ===========================
    RESPONSIVE
-================================================== */
-@media (max-width: 768px) {
+=========================== */
+
+/* TABLETS */
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 1.8rem;
+    }
+
     .titulo {
-        font-size: 3rem;
+        font-size: 3.2rem;
     }
 
     .main {
-        width: 92%;
+        max-width: 92%;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    /* NAV */
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 60%;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 0;
+        transform: translateX(100%);
+        transition: 0.4s ease;
+    }
+
+    .nav-links.open {
+        transform: translateX(0);
+    }
+
+    .titulo {
+        font-size: 2.8rem;
+        margin-top: 100px;
     }
 
     .button-container {
         flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 280px;
     }
 }
 
+/* SMALL MOBILE */
 @media (max-width: 480px) {
+
+    .nav-container {
+        padding: 0 2rem;
+    }
+
     .titulo {
         font-size: 2.4rem;
     }
 
-    .text-input {
-        font-size: 1.3rem;
-    }
-
-    .footer-content h3 {
-        font-size: 2rem;
+    .footer-menu {
+        flex-direction: column;
+        gap: 0.7rem;
     }
 }
